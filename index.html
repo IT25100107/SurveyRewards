@@ -43,6 +43,121 @@ button:hover { transform: scale(1.05); transition: 0.3s ease; }
   <p class="text-gray-600 text-md sm:text-lg">Answer surveys and spin the wheel to unlock surprise rewards.</p>
 </section>
 
+    <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Cat Survey</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #fff3e6;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            max-width: 500px;
+            background: #ffffff;
+            margin: 40px auto;
+            padding: 25px;
+            border-radius: 12px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+
+        h1 {
+            text-align: center;
+            color: #ff7a18;
+        }
+
+        label {
+            font-weight: bold;
+            display: block;
+            margin-top: 15px;
+        }
+
+        input, select, textarea {
+            width: 100%;
+            padding: 10px;
+            margin-top: 6px;
+            border-radius: 6px;
+            border: 1px solid #ccc;
+        }
+
+        .radio-group {
+            margin-top: 8px;
+        }
+
+        .radio-group input {
+            width: auto;
+            margin-right: 5px;
+        }
+
+        button {
+            margin-top: 20px;
+            width: 100%;
+            padding: 12px;
+            background: #ff7a18;
+            color: white;
+            font-size: 16px;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background: #e86a10;
+        }
+
+        .footer {
+            text-align: center;
+            margin-top: 15px;
+            font-size: 14px;
+            color: #777;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1>🐾 Cat Survey</h1>
+
+    <form>
+        <label>Your Name</label>
+        <input type="text" placeholder="Enter your name" required>
+
+        <label>Do you like cats?</label>
+        <div class="radio-group">
+            <input type="radio" name="likeCats" required> Yes 😻
+            <input type="radio" name="likeCats"> No 🙀
+        </div>
+
+        <label>How many cats do you have?</label>
+        <select>
+            <option>None</option>
+            <option>1</option>
+            <option>2</option>
+            <option>3+</option>
+        </select>
+
+        <label>Favorite cat activity?</label>
+        <input type="text" placeholder="Sleeping, Playing, Eating...">
+
+        <label>Why do you love cats?</label>
+        <textarea rows="4" placeholder="Because they are cute..."></textarea>
+
+        <button type="submit">Submit Survey and win 10$ 🐱💸</button>
+    </form>
+
+    <div class="footer">
+        Thanks for loving cats 💕
+    </div>
+</div>
+
+</body>
+</html>
+
+
 <!-- SURVEYS LIST -->
 <section id="surveys">
   <h2 class="text-2xl sm:text-3xl font-bold text-center mb-6">Available Surveys</h2>
@@ -271,5 +386,6 @@ function claimNow(){ document.getElementById("contact").scrollIntoView({behavior
 
 </body>
 </html>
+
 
 
