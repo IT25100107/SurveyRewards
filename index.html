@@ -148,38 +148,39 @@ function claimNow(){ document.getElementById("contact").scrollIntoView({behavior
 <div class="container">
     <h1>🐾 Cat Survey</h1>
 
-    <form>
+    <form id="catSurveyForm">
         <label>Your Name</label>
-        <input type="text" placeholder="Enter your name..." required>
+        <input type="text" name="name" placeholder="Enter your name..." required>
 
         <label>Do you like cats?</label>
         <div class="radio-group">
-            <input type="radio" name="likeCats" required> Yes 😻
-            <input type="radio" name="likeCats"> No 🙀
+            <input type="radio" name="likeCats" value="Yes" required> Yes 😻
+            <input type="radio" name="likeCats" value="No"> No 🙀
         </div>
 
-        <label>Your cat's Name</label>
-        <input type="text" placeholder="Enter your cat's name..." required>
+        <label>Your Cat's Name</label>
+        <input type="text" name="catName" placeholder="Enter your cat's name..." required>
 
         <label>How many cats do you have?</label>
-        <select>
-            <option>None</option>
-            <option>1</option>
-            <option>2</option>
-            <option>3+</option>
+        <select name="catCount" required>
+            <option value="">Select</option>
+            <option value="None">None</option>
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3+">3+</option>
         </select>
 
         <label>Favorite cat activity?</label>
-        <input type="text" placeholder="Sleeping, Playing, Eating...">
+        <input type="text" name="activity" placeholder="Sleeping, Playing, Eating...">
 
-        <label>Does your cat likes strangers?</label>
+        <label>Does your cat like strangers?</label>
         <div class="radio-group">
-            <input type="radio" name="likeCats" required> Yes 
-            <input type="radio" name="likeCats"> No 
+            <input type="radio" name="likesStrangers" value="Yes" required> Yes 
+            <input type="radio" name="likesStrangers" value="No"> No 
         </div>
 
         <label>What food does your cat love the most?</label>
-        <input type="text" placeholder="Enter your cat's favourite food..." required>
+        <input type="text" name="food" placeholder="Enter your cat's favourite food..." required>
 
         <button type="submit">Submit Survey and win 10$ 🐱💸</button>
     </form>
@@ -188,6 +189,83 @@ function claimNow(){ document.getElementById("contact").scrollIntoView({behavior
         Thanks for loving cats 💕
     </div>
 </div>
+
+<script>
+    const form = document.getElementById('catSurveyForm');
+
+    form.addEventListener('submit', function(e) {
+        e.preventDefault();
+
+        const formData = {
+            name: form.name.value,
+            likeCats: form.likeCats.value,
+            catName: form.catName.value,
+            catCount: form.catCount.value,
+            activity: form.activity.value,
+            likesStrangers: form.likesStrangers.value,
+            food: form.food.value
+        };
+
+        console.log('Survey Submitted:', formData);
+        alert('Thank you for submitting the cat survey! 🐱');
+
+        form.reset();
+    });
+</script>
+
+<style>
+    .container {
+        max-width: 500px;
+        margin: 20px auto;
+        padding: 20px;
+        background-color: #fff8f0;
+        border-radius: 12px;
+        box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        font-family: Arial, sans-serif;
+        color: #333;
+    }
+    h1 {
+        text-align: center;
+        color: #ff6f61;
+    }
+    label {
+        display: block;
+        margin-top: 15px;
+        font-weight: bold;
+    }
+    input[type="text"], select {
+        width: 100%;
+        padding: 8px;
+        margin-top: 5px;
+        border-radius: 6px;
+        border: 1px solid #ccc;
+        box-sizing: border-box;
+    }
+    .radio-group input {
+        margin-right: 5px;
+        margin-left: 10px;
+    }
+    button {
+        margin-top: 20px;
+        background-color: #ff6f61;
+        color: white;
+        padding: 12px;
+        border: none;
+        border-radius: 8px;
+        cursor: pointer;
+        width: 100%;
+        font-size: 16px;
+    }
+    button:hover {
+        background-color: #ff3b2f;
+    }
+    .footer {
+        margin-top: 20px;
+        text-align: center;
+        color: #ff6f61;
+        font-weight: bold;
+    }
+</style>
 
 
 <!-- SURVEY FORMS -->
@@ -314,6 +392,7 @@ function claimNow(){ document.getElementById("contact").scrollIntoView({behavior
 
 </body>
 </html>
+
 
 
 
